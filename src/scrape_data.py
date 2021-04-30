@@ -50,3 +50,14 @@ if __name__ == '__main__':
     phase1 = read_dataset(os.environ['PHASE1_URL'])
     phase2 = read_dataset(os.environ['PHASE2_URL'])
     investments = pd.concat([phase1, phase2])
+
+    # Write the data back to storage
+    s3_opts = {
+        'anon':False,
+        'use_ssl': os.environ['S3_USE_SSL'],
+        'client_kwargs':{
+            'endpoint_url': os.environ['S3_URL']
+            }
+        }
+    s3_path = "s3://evafidi/investments.parquet
+    investments.to_parquet(s3_path, storage_options=opts)"
