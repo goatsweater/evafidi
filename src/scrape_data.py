@@ -59,5 +59,5 @@ if __name__ == '__main__':
             'endpoint_url': os.environ['S3_URL']
             }
         }
-    s3_path = "s3://evafidi/investments.parquet
+    s3_path = "s3://evafidi/investments.parquet"
     investments.to_parquet(s3_path, storage_options=opts)"
