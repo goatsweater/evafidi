@@ -60,4 +60,4 @@ if __name__ == '__main__':
             }
         }
     s3_path = "s3://evafidi/investments.parquet"
-    investments.to_parquet(s3_path, storage_options=opts)"
+    investments.to_parquet(s3_path, storage_options=opts)
